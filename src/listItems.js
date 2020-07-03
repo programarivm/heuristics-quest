@@ -2,43 +2,50 @@ import React from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
-import LayersIcon from '@material-ui/icons/Layers';
+import VerticalAlignCenterIcon from '@material-ui/icons/VerticalAlignCenter';
+import WidgetsIcon from '@material-ui/icons/Widgets';
+import FlashAutoIcon from '@material-ui/icons/FlashAuto';
+import SecurityIcon from '@material-ui/icons/Security';
+import GrainIcon from '@material-ui/icons/Grain';
+import PanoramaIcon from '@material-ui/icons/Panorama';
 
 export const mainListItems = (
   <div>
     <ListItem button>
       <ListItemIcon>
-        <DashboardIcon />
+        <FlashAutoIcon />
       </ListItemIcon>
-      <ListItemText primary="Dashboard" />
+      <ListItemText primary="Attack" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <VerticalAlignCenterIcon />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Center" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <PeopleIcon />
+        <SecurityIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="King safety" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <BarChartIcon />
+        <GrainIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Material" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <LayersIcon />
+        <PanoramaIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Space" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <WidgetsIcon />
+      </ListItemIcon>
+      <ListItemText primary="Square" />
     </ListItem>
   </div>
 );
