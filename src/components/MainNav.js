@@ -1,7 +1,6 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { connect as dbConnect } from 'actions/dbActions';
-import { disconnect as dbDisconnect } from 'actions/dbActions';
+import { useDispatch } from 'react-redux';
+import { query as apiQuery } from 'actions/apiQueryActions';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import Collapse from '@material-ui/core/Collapse';
@@ -12,16 +11,14 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StorageIcon from '@material-ui/icons/Storage';
+import CloudIcon from '@material-ui/icons/Cloud';
 import VerticalAlignCenterIcon from '@material-ui/icons/VerticalAlignCenter';
 import WidgetsIcon from '@material-ui/icons/Widgets';
-import FlashAutoIcon from '@material-ui/icons/FlashAuto';
+import SportsKabaddiIcon from '@material-ui/icons/SportsKabaddi';
+import FlashOnIcon from '@material-ui/icons/FlashOn';
 import SecurityIcon from '@material-ui/icons/Security';
 import GrainIcon from '@material-ui/icons/Grain';
-import PowerIcon from '@material-ui/icons/Power';
-import PowerOffIcon from '@material-ui/icons/PowerOff';
-
-import DbConnectModal from 'components/modal/DbConnect';
+import ApiQueryModal from 'components/modal/ApiQuery';
 
 const useStyles = makeStyles((theme) => ({
   nested: {
@@ -32,57 +29,41 @@ const useStyles = makeStyles((theme) => ({
 const MainNav = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-
-  const dbReducer = useSelector(state => state.dbReducer);
   const dispatch = useDispatch();
 
-  const handleClickDbSubmenu = () => {
+  const handleClickApiSubmenu = () => {
     setOpen(!open);
   };
 
-  const handleClickDbConnect = (e) => {
+  const handleClickApiQuery = (e) => {
     e.preventDefault();
-    dispatch(dbConnect());
-  };
-
-  const handleClickDbDisconnect = (e) => {
-    e.preventDefault();
-    dispatch(dbDisconnect());
+    dispatch(apiQuery());
   };
 
   return (
     <div>
       <div>
-        <ListItem button onClick={handleClickDbSubmenu}>
+        <ListItem button onClick={handleClickApiSubmenu}>
           <ListItemIcon>
-            <StorageIcon />
+            <CloudIcon />
           </ListItemIcon>
-          <ListItemText secondary="Database" />
+          <ListItemText secondary="API" />
           {open ? <ExpandLess /> : <ExpandMore />}
         </ListItem>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            {
-              dbReducer.connected
-                ? <ListItem button className={classes.nested} onClick={handleClickDbDisconnect}>
-                    <ListItemIcon>
-                      <PowerOffIcon />
-                    </ListItemIcon>
-                    <ListItemText secondary="Disconnect" />
-                  </ListItem>
-                : <ListItem button className={classes.nested} onClick={handleClickDbConnect}>
-                    <ListItemIcon>
-                      <PowerIcon />
-                    </ListItemIcon>
-                    <ListItemText secondary="Connect" />
-                  </ListItem>
-            }
+            <ListItem button className={classes.nested} onClick={handleClickApiQuery}>
+              <ListItemIcon>
+                <FlashOnIcon />
+              </ListItemIcon>
+              <ListItemText secondary="Query" />
+            </ListItem>
           </List>
         </Collapse>
         <Divider />
         <ListItem button component={Link} to="/attack">
           <ListItemIcon>
-            <FlashAutoIcon />
+            <SportsKabaddiIcon />
           </ListItemIcon>
           <ListItemText secondary="Attack" />
         </ListItem>
@@ -111,7 +92,7 @@ const MainNav = () => {
           <ListItemText secondary="Space" />
         </ListItem>
       </div>
-      <DbConnectModal />
+      <ApiQueryModal />
     </div>
   );
 }

@@ -1,6 +1,6 @@
-import dbReducer from 'reducers/dbReducer';
+import apiQueryReducer from 'reducers/apiQueryReducer';
 import { combineReducers } from 'redux';
 
 export default combineReducers({
-  dbReducer
+  apiQueryReducer
 });
