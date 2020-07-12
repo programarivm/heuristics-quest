@@ -3,7 +3,6 @@ import apiQueryActionTypes from 'constants/apiQueryActionTypes';
 const api = (state = {}, action) => {
   switch (action.type) {
     case apiQueryActionTypes.CLICK_ACCEPT:
-      // TODO: run query
       return {
         ...state,
         modal: {
@@ -24,9 +23,18 @@ const api = (state = {}, action) => {
           open: true
         }
       };
+    case apiQueryActionTypes.HTTP_STATUS_200:
+      return {
+        ...state,
+        games: action.payload,
+        modal: {
+          open: false
+        }
+      };
     default:
       return {
         ...state,
+        games: [],
         modal: {
           open: false
         }

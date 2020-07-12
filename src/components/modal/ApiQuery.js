@@ -59,9 +59,9 @@ export default function ApiQuery() {
                 required
                 fullWidth
                 multiline
-                id="query"
-                label="Query"
-                name="query"
+                id="sql"
+                label="SQL Query"
+                name="sql"
                 margin="normal"
                 InputLabelProps={{ shrink: true }}
                 inputRef={register}
