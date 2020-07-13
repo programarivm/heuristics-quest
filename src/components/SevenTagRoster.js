@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const isHeuristic = (key) => {
-  return key === 'attack' || key === 'center' || key === 'material' ||  key === 'space'
+  return key === 'attack' || key === 'center' || key === 'king_safety' || key === 'material' ||  key === 'space'
 };
 
 export default function SevenTagRoster(game) {
