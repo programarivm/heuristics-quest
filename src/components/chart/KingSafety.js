@@ -5,7 +5,6 @@ import useStyles from 'components/chart/styles';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Movetext from 'components/Movetext';
 import Paper from '@material-ui/core/Paper';
 import SevenTagRoster from 'components/SevenTagRoster';
 import Typography from '@material-ui/core/Typography';
@@ -126,11 +125,6 @@ export default function KingSafetyChart() {
         <Grid item xs={12} md={4} lg={3}>
           <Paper className={fixedHeightPaper}>
             <SevenTagRoster />
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper>
-            <Movetext />
           </Paper>
         </Grid>
       </Grid>
