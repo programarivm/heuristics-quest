@@ -37,8 +37,8 @@ export default function ConnectivityChart() {
                   <YAxis />
                   <Tooltip />
                   <Legend />
-                  <Line type="monotone" dataKey="w" stroke="#82ca9d" fill="#82ca9d" strokeWidth={2} />
-                  <Line type="monotone" dataKey="b" stroke="#8884d8" fill="#8884d8" strokeWidth={2} activeDot={{ r: 8 }} />
+                  <Line type="monotone" dataKey="w" stroke="#82ca9d" fill="#82ca9d" dot={false} strokeWidth={2} />
+                  <Line type="monotone" dataKey="b" stroke="#8884d8" fill="#8884d8" dot={false} strokeWidth={2} />
                 </LineChart>
               </ResponsiveContainer>
             </React.Fragment>
