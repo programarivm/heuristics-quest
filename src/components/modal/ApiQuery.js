@@ -1,13 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { makeStyles } from '@material-ui/core/styles';
 import { accept as apiQueryAccept } from 'actions/apiQueryActions';
 import { cancel as apiQueryCancel } from 'actions/apiQueryActions';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import { Button, ButtonGroup, TextField } from '@material-ui/core';
+import { Button, ButtonGroup } from '@material-ui/core';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -22,20 +27,34 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
   },
+  formControl: {
+    margin: theme.spacing(1),
+    width: '100%',
+  },
 }));
 
+/**
+ * Modal to query the API.
+ * {@link https://github.com/react-hook-form/react-hook-form/issues/497}
+ */
 export default function ApiQuery() {
   const classes = useStyles();
   const apiQueryReducer = useSelector(state => state.apiQueryReducer);
   const dispatch = useDispatch();
-  const { register, handleSubmit } = useForm();
+  const { control, handleSubmit } = useForm();
 
   const handleClickCancel = () => {
     dispatch(apiQueryCancel());
   };
 
   const onSubmitForm = (data) => {
-    dispatch(apiQueryAccept(data));
+    dispatch(apiQueryAccept({
+      sql: `SELECT * FROM games
+            WHERE result='${data.result}'
+            ORDER BY RAND()
+            LIMIT ${data.limit}`
+      })
+    );
   };
 
   return (
@@ -54,19 +73,42 @@ export default function ApiQuery() {
       >
         <Fade in={apiQueryReducer.modal.open}>
           <div className={classes.paper}>
+            <Typography variant="h5">
+              API Query
+            </Typography>
             <form onSubmit={handleSubmit(onSubmitForm)}>
-              <TextField
-                required
-                fullWidth
-                multiline
-                id="sql"
-                label="SQL Query"
-                name="sql"
-                margin="normal"
-                InputLabelProps={{ shrink: true }}
-                inputRef={register}
-                rows={3}
-              />
+              <FormControl className={classes.formControl}>
+                <InputLabel id="result-label">Result</InputLabel>
+                <Controller
+                  as={
+                    <Select>
+                      <MenuItem value="1-0">1-0</MenuItem>
+                      <MenuItem value="0-1">0-1</MenuItem>
+                      <MenuItem value="1/2-1/2">1/2-1/2</MenuItem>
+                    </Select>
+                  }
+                  name="result"
+                  control={control}
+                  defaultValue=""
+                  required
+                />
+              </FormControl>
+              <FormControl className={classes.formControl}>
+                <InputLabel id="limit-label">Limit</InputLabel>
+                <Controller
+                  as={
+                    <Select>
+                      <MenuItem value="10">10</MenuItem>
+                      <MenuItem value="50">50</MenuItem>
+                      <MenuItem value="100">100</MenuItem>
+                    </Select>
+                  }
+                  name="limit"
+                  control={control}
+                  defaultValue=""
+                  required
+                />
+              </FormControl>
               <ButtonGroup
                 style={{ marginTop: 10, marginBottom: 10 }}
                 size="small"
