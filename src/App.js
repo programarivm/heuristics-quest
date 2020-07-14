@@ -7,6 +7,7 @@ import Drawer from '@material-ui/core/Drawer';
 import MainNav from 'components/MainNav';
 import AttackChart from 'components/chart/Attack';
 import CenterChart from 'components/chart/Center';
+import ConnectivityChart from 'components/chart/Connectivity';
 import KingSafetyChart from 'components/chart/KingSafety';
 import MaterialChart from 'components/chart/Material';
 import SpaceChart from 'components/chart/Space';
@@ -56,6 +57,7 @@ export default function App() {
           <Route exact path="/" component={AttackChart} />
           <Route path="/attack" component={AttackChart} />
           <Route path="/center" component={CenterChart} />
+          <Route path="/connectivity" component={ConnectivityChart} />
           <Route path="/king-safety" component={KingSafetyChart} />
           <Route path="/material" component={MaterialChart} />
           <Route path="/space" component={SpaceChart} />

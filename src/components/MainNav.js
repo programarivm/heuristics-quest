@@ -18,6 +18,7 @@ import SportsKabaddiIcon from '@material-ui/icons/SportsKabaddi';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 import SecurityIcon from '@material-ui/icons/Security';
 import GrainIcon from '@material-ui/icons/Grain';
+import NetworkWifiIcon from '@material-ui/icons/NetworkWifi';
 import ApiQueryModal from 'components/modal/ApiQuery';
 
 const useStyles = makeStyles((theme) => ({
@@ -72,6 +73,12 @@ const MainNav = () => {
             <VerticalAlignCenterIcon />
           </ListItemIcon>
           <ListItemText secondary="Center" />
+        </ListItem>
+        <ListItem button component={Link} to="/connectivity">
+          <ListItemIcon>
+            <NetworkWifiIcon />
+          </ListItemIcon>
+          <ListItemText secondary="Connectivity" />
         </ListItem>
         <ListItem button component={Link} to="/king-safety">
           <ListItemIcon>
