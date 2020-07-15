@@ -13,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Typography from '@material-ui/core/Typography';
+import Loading from 'components/Loading';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -73,9 +74,10 @@ export default function ApiQuery() {
       >
         <Fade in={apiQueryReducer.modal.open}>
           <div className={classes.paper}>
-            <Typography variant="h5">
+            <Typography variant="h5" align="center">
               API Query
             </Typography>
+            <Loading loading={apiQueryReducer.loading} />
             <form onSubmit={handleSubmit(onSubmitForm)}>
               <FormControl className={classes.formControl}>
                 <InputLabel id="result-label">Result</InputLabel>

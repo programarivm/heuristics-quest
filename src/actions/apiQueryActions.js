@@ -4,6 +4,7 @@ import apiQueryActionTypes from 'constants/apiQueryActionTypes';
 export const accept = (data) =>
 {
   return dispatch => {
+    dispatch({ type: apiQueryActionTypes.LOADING });
     axios.post(process.env.REACT_APP_URL + `/api/query`, data)
 			.then((res) => {
         dispatch({
