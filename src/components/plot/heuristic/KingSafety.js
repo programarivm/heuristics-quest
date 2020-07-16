@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import Breadcrumbs from 'components/plot/Breadcrumbs';
 import Games from 'components/plot/Games';
 
-export default function KingSafetyAttack() {
+export default function HeuristicKingSafety() {
   const name = 'king_safety';
   const classes = useStyles();
 

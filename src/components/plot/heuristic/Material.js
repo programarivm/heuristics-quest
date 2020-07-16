@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import Breadcrumbs from 'components/plot/Breadcrumbs';
 import Games from 'components/plot/Games';
 
-export default function MaterialAttack() {
+export default function HeuristicMaterial() {
   const name = 'material';
   const classes = useStyles();
 

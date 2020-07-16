@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import Breadcrumbs from 'components/plot/Breadcrumbs';
 import Games from 'components/plot/Games';
 
-export default function CenterAttack() {
+export default function HeuristicCenter() {
   const name = 'center';
   const classes = useStyles();
 

@@ -4,7 +4,7 @@ import Container from '@material-ui/core/Container';
 import Breadcrumbs from 'components/plot/Breadcrumbs';
 import Games from 'components/plot/Games';
 
-export default function SpaceAttack() {
+export default function HeuristicSpace() {
   const name = 'space';
   const classes = useStyles();
 
