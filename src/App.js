@@ -5,12 +5,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import MainNav from 'components/MainNav';
-import AttackChart from 'components/plot/Attack';
-import CenterChart from 'components/plot/Center';
-import ConnectivityChart from 'components/plot/Connectivity';
-import KingSafetyChart from 'components/plot/KingSafety';
-import MaterialChart from 'components/plot/Material';
-import SpaceChart from 'components/plot/Space';
+import HeuristicAttack from 'components/plot/heuristic/Attack';
+import HeuristicCenter from 'components/plot/heuristic/Center';
+import HeuristicConnectivity from 'components/plot/heuristic/Connectivity';
+import HeuristicKingSafety from 'components/plot/heuristic/KingSafety';
+import HeuristicMaterial from 'components/plot/heuristic/Material';
+import HeuristicSpace from 'components/plot/heuristic/Space';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -54,13 +54,13 @@ export default function App() {
       </Drawer>
       <main className={classes.content}>
         <Switch>
-          <Route exact path="/" component={AttackChart} />
-          <Route path="/attack" component={AttackChart} />
-          <Route path="/center" component={CenterChart} />
-          <Route path="/connectivity" component={ConnectivityChart} />
-          <Route path="/king-safety" component={KingSafetyChart} />
-          <Route path="/material" component={MaterialChart} />
-          <Route path="/space" component={SpaceChart} />
+          <Route exact path="/" component={HeuristicAttack} />
+          <Route path="/attack" component={HeuristicAttack} />
+          <Route path="/center" component={HeuristicCenter} />
+          <Route path="/connectivity" component={HeuristicConnectivity} />
+          <Route path="/king-safety" component={HeuristicKingSafety} />
+          <Route path="/material" component={HeuristicMaterial} />
+          <Route path="/space" component={HeuristicSpace} />
         </Switch>
       </main>
     </div>

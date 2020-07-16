@@ -1,7 +1,7 @@
 import React from 'react';
 import { CartesianGrid, Legend, LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
-export default function HeuristicChart(data) {
+export default function Chart(data) {
   return (
     <React.Fragment>
       <ResponsiveContainer>
