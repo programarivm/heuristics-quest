@@ -5,12 +5,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import MainNav from 'components/MainNav';
-import AttackChart from 'components/chart/Attack';
-import CenterChart from 'components/chart/Center';
-import ConnectivityChart from 'components/chart/Connectivity';
-import KingSafetyChart from 'components/chart/KingSafety';
-import MaterialChart from 'components/chart/Material';
-import SpaceChart from 'components/chart/Space';
+import AttackChart from 'components/plot/Attack';
+import CenterChart from 'components/plot/Center';
+import ConnectivityChart from 'components/plot/Connectivity';
+import KingSafetyChart from 'components/plot/KingSafety';
+import MaterialChart from 'components/plot/Material';
+import SpaceChart from 'components/plot/Space';
 
 const useStyles = makeStyles((theme) => ({
   root: {
