@@ -7,6 +7,7 @@ import Drawer from '@material-ui/core/Drawer';
 import MainNav from 'components/MainNav';
 import HeuristicAttack from 'components/plot/heuristic/Attack';
 import HeuristicCenter from 'components/plot/heuristic/Center';
+import HeuristicCheck from 'components/plot/heuristic/Check';
 import HeuristicConnectivity from 'components/plot/heuristic/Connectivity';
 import HeuristicKingSafety from 'components/plot/heuristic/KingSafety';
 import HeuristicMaterial from 'components/plot/heuristic/Material';
@@ -57,6 +58,7 @@ export default function App() {
           <Route exact path="/" component={HeuristicAttack} />
           <Route path="/attack" component={HeuristicAttack} />
           <Route path="/center" component={HeuristicCenter} />
+          <Route path="/check" component={HeuristicCheck} />
           <Route path="/connectivity" component={HeuristicConnectivity} />
           <Route path="/king-safety" component={HeuristicKingSafety} />
           <Route path="/material" component={HeuristicMaterial} />

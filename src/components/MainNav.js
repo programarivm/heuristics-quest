@@ -15,6 +15,7 @@ import CloudIcon from '@material-ui/icons/Cloud';
 import VerticalAlignCenterIcon from '@material-ui/icons/VerticalAlignCenter';
 import WidgetsIcon from '@material-ui/icons/Widgets';
 import SportsKabaddiIcon from '@material-ui/icons/SportsKabaddi';
+import AnnouncementIcon from '@material-ui/icons/Announcement';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 import SecurityIcon from '@material-ui/icons/Security';
 import GrainIcon from '@material-ui/icons/Grain';
@@ -73,6 +74,12 @@ const MainNav = () => {
             <VerticalAlignCenterIcon />
           </ListItemIcon>
           <ListItemText secondary="Center" />
+        </ListItem>
+        <ListItem button component={Link} to="/check">
+          <ListItemIcon>
+            <AnnouncementIcon />
+          </ListItemIcon>
+          <ListItemText secondary="Check" />
         </ListItem>
         <ListItem button component={Link} to="/connectivity">
           <ListItemIcon>
