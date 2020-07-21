@@ -20,6 +20,7 @@ import FlashOnIcon from '@material-ui/icons/FlashOn';
 import SecurityIcon from '@material-ui/icons/Security';
 import GrainIcon from '@material-ui/icons/Grain';
 import NetworkWifiIcon from '@material-ui/icons/NetworkWifi';
+import LabelIcon from '@material-ui/icons/Label';
 import ApiQueryModal from 'components/modal/ApiQuery';
 
 const useStyles = makeStyles((theme) => ({
@@ -104,6 +105,13 @@ const MainNav = () => {
             <WidgetsIcon />
           </ListItemIcon>
           <ListItemText secondary="Space" />
+        </ListItem>
+        <Divider />
+        <ListItem button component={Link} to="/label">
+          <ListItemIcon>
+            <LabelIcon />
+          </ListItemIcon>
+          <ListItemText secondary="MLP label" />
         </ListItem>
       </div>
       <ApiQueryModal />

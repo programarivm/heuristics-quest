@@ -12,6 +12,7 @@ import HeuristicConnectivity from 'components/plot/heuristic/Connectivity';
 import HeuristicKingSafety from 'components/plot/heuristic/KingSafety';
 import HeuristicMaterial from 'components/plot/heuristic/Material';
 import HeuristicSpace from 'components/plot/heuristic/Space';
+import MlpLabel from 'components/plot/heuristic/MlpLabel';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,6 +64,7 @@ export default function App() {
           <Route path="/king-safety" component={HeuristicKingSafety} />
           <Route path="/material" component={HeuristicMaterial} />
           <Route path="/space" component={HeuristicSpace} />
+          <Route path="/label" component={MlpLabel} />
         </Switch>
       </main>
     </div>
