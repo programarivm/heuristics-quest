@@ -106,13 +106,6 @@ const MainNav = () => {
           </ListItemIcon>
           <ListItemText secondary="Space" />
         </ListItem>
-        <Divider />
-        <ListItem button component={Link} to="/label">
-          <ListItemIcon>
-            <LabelIcon />
-          </ListItemIcon>
-          <ListItemText secondary="MLP label" />
-        </ListItem>
       </div>
       <ApiQueryModal />
     </div>
