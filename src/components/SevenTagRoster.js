@@ -4,7 +4,6 @@ import Typography from '@material-ui/core/Typography';
 const isHeuristic = (key) => {
   return key === 'attack' ||
         key === 'center' ||
-        key === 'check' || 
         key === 'connectivity' ||
         key === 'king_safety' ||
         key === 'material' ||
