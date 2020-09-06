@@ -19,7 +19,7 @@ export default function Games(params) {
     const data = prepareHeuristicPicture(JSON.parse(game.heuristic_picture));
     const games = [];
     data.forEach((item, j) => {
-      games.push(<Grid key={`${i}${j}`} item xs={12}>
+      games.push(<Grid key={`${i}${j}`} item xs={4}>
         <Paper className={fixedHeightPaper}>
           <Subtotal {...calcSubtotal(data[j])} />
           <Chart axis={data[j]} />
