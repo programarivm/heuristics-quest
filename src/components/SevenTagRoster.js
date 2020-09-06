@@ -2,7 +2,15 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const isBlacklist = (key) => {
-  return key === 'heuristic_picture'
+  return key === 'heuristic_picture' ||
+    key === 'Event' ||
+    key === 'Site' ||
+    key === 'Date' ||
+    key === 'White' ||
+    key === 'Black' ||
+    key === 'WhiteElo' ||
+    key === 'BlackElo' ||
+    key === 'ECO';
 };
 
 export default function SevenTagRoster(game) {
