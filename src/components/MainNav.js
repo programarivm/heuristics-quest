@@ -12,7 +12,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import CloudIcon from '@material-ui/icons/Cloud';
-import BarChartIcon from '@material-ui/icons/BarChart';
+import PhotoLibraryIcon from '@material-ui/icons/PhotoLibrary';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
 import ApiQueryModal from 'components/modal/ApiQuery';
 
@@ -57,11 +57,11 @@ const MainNav = () => {
           </List>
         </Collapse>
         <Divider />
-        <ListItem button component={Link} to="/visualization">
+        <ListItem button component={Link} to="/heuristic-picture">
           <ListItemIcon>
-            <BarChartIcon />
+            <PhotoLibraryIcon />
           </ListItemIcon>
-          <ListItemText secondary="Visualization" />
+          <ListItemText secondary="Heuristic picture" />
         </ListItem>
       </div>
       <ApiQueryModal />
