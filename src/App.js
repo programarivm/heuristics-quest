@@ -6,11 +6,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import MainNav from 'components/MainNav';
 import HeuristicAttack from 'components/plot/heuristic/Attack';
-import HeuristicCenter from 'components/plot/heuristic/Center';
-import HeuristicConnectivity from 'components/plot/heuristic/Connectivity';
-import HeuristicKingSafety from 'components/plot/heuristic/KingSafety';
-import HeuristicMaterial from 'components/plot/heuristic/Material';
-import HeuristicSpace from 'components/plot/heuristic/Space';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,11 +51,6 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={HeuristicAttack} />
           <Route path="/attack" component={HeuristicAttack} />
-          <Route path="/center" component={HeuristicCenter} />
-          <Route path="/connectivity" component={HeuristicConnectivity} />
-          <Route path="/king-safety" component={HeuristicKingSafety} />
-          <Route path="/material" component={HeuristicMaterial} />
-          <Route path="/space" component={HeuristicSpace} />
         </Switch>
       </main>
     </div>

@@ -12,13 +12,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import CloudIcon from '@material-ui/icons/Cloud';
-import VerticalAlignCenterIcon from '@material-ui/icons/VerticalAlignCenter';
-import WidgetsIcon from '@material-ui/icons/Widgets';
 import SportsKabaddiIcon from '@material-ui/icons/SportsKabaddi';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
-import SecurityIcon from '@material-ui/icons/Security';
-import GrainIcon from '@material-ui/icons/Grain';
-import NetworkWifiIcon from '@material-ui/icons/NetworkWifi';
 import ApiQueryModal from 'components/modal/ApiQuery';
 
 const useStyles = makeStyles((theme) => ({
@@ -67,36 +62,6 @@ const MainNav = () => {
             <SportsKabaddiIcon />
           </ListItemIcon>
           <ListItemText secondary="Attack" />
-        </ListItem>
-        <ListItem button component={Link} to="/center">
-          <ListItemIcon>
-            <VerticalAlignCenterIcon />
-          </ListItemIcon>
-          <ListItemText secondary="Center" />
-        </ListItem>
-        <ListItem button component={Link} to="/connectivity">
-          <ListItemIcon>
-            <NetworkWifiIcon />
-          </ListItemIcon>
-          <ListItemText secondary="Connectivity" />
-        </ListItem>
-        <ListItem button component={Link} to="/king-safety">
-          <ListItemIcon>
-            <SecurityIcon />
-          </ListItemIcon>
-          <ListItemText secondary="King safety" />
-        </ListItem>
-        <ListItem button component={Link} to="/material">
-          <ListItemIcon>
-            <GrainIcon />
-          </ListItemIcon>
-          <ListItemText secondary="Material" />
-        </ListItem>
-        <ListItem button component={Link} to="/space">
-          <ListItemIcon>
-            <WidgetsIcon />
-          </ListItemIcon>
-          <ListItemText secondary="Space" />
         </ListItem>
       </div>
       <ApiQueryModal />
