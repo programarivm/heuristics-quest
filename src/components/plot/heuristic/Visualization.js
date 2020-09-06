@@ -3,8 +3,8 @@ import useStyles from 'components/plot/styles';
 import Container from '@material-ui/core/Container';
 import Games from 'components/plot/Games';
 
-export default function HeuristicAttack() {
-  const name = 'attack';
+export default function HeuristicVisualization() {
+  const name = 'visualization';
   const classes = useStyles();
 
   return (

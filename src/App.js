@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
 import MainNav from 'components/MainNav';
-import HeuristicAttack from 'components/plot/heuristic/Attack';
+import HeuristicVisualization from 'components/plot/heuristic/Visualization';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,8 +49,8 @@ export default function App() {
       </Drawer>
       <main className={classes.content}>
         <Switch>
-          <Route exact path="/" component={HeuristicAttack} />
-          <Route path="/attack" component={HeuristicAttack} />
+          <Route exact path="/" component={HeuristicVisualization} />
+          <Route path="/visualization" component={HeuristicVisualization} />
         </Switch>
       </main>
     </div>

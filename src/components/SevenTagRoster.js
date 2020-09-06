@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const isHeuristic = (key) => {
-  return key === 'attack' ||
+  return key === 'visualization' ||
         key === 'center' ||
         key === 'connectivity' ||
         key === 'king_safety' ||
