@@ -14,26 +14,27 @@ export default function Games(params) {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
-  let games = [];
-
+  let items = [];
   apiQueryReducer.games.forEach((game, i) => {
     const data = prepareHeuristicPicture(JSON.parse(game.heuristic_picture));
+    const games = [];
     data.forEach((item, j) => {
-      games.push(<Grid key={`${i}${j}`} container spacing={3}>
-        <Grid item xs={12}>
-          <Paper className={fixedHeightPaper}>
-            <SevenTagRoster {...game} />
-          </Paper>
-        </Grid>
-        <Grid item xs={12}>
-          <Paper className={fixedHeightPaper}>
-            <Subtotal {...calcSubtotal(data[j])} />
-            <Chart axis={data[j]} />
-          </Paper>
-        </Grid>
+      games.push(<Grid key={`${i}${j}`} item xs={12}>
+        <Paper className={fixedHeightPaper}>
+          <Subtotal {...calcSubtotal(data[j])} />
+          <Chart axis={data[j]} />
+        </Paper>
       </Grid>);
-    })
+    });
+    items.push(<Grid key={i} container spacing={3}>
+      <Grid item xs={12}>
+        <Paper className={fixedHeightPaper}>
+          <SevenTagRoster {...game} />
+        </Paper>
+      </Grid>
+      { games }
+    </Grid>);
   });
 
-  return games;
+  return items;
 }
