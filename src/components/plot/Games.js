@@ -28,9 +28,7 @@ export default function Games(params) {
     });
     items.push(<Grid key={i} container spacing={3}>
       <Grid item xs={12}>
-        <Paper className={fixedHeightPaper}>
-          <SevenTagRoster {...game} />
-        </Paper>
+        <SevenTagRoster {...game} />
       </Grid>
       { games }
     </Grid>);
