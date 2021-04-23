@@ -50,7 +50,6 @@ export default function App() {
       <main className={classes.content}>
         <Switch>
           <Route exact path="/" component={HeuristicPicture} />
-          <Route path="/heuristic-picture" component={HeuristicPicture} />
         </Switch>
       </main>
     </div>
