@@ -49,7 +49,6 @@ export default function ApiQuery() {
   };
 
   const onSubmitForm = (data) => {
-    console.log(data);
     dispatch(apiQueryAccept({
       sql: `SELECT * FROM games
             WHERE result='${data.result}'
