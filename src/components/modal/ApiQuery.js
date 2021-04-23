@@ -49,6 +49,7 @@ export default function ApiQuery() {
   };
 
   const onSubmitForm = (data) => {
+    console.log(data);
     dispatch(apiQueryAccept({
       sql: `SELECT * FROM games
             WHERE result='${data.result}'
@@ -99,7 +100,7 @@ export default function ApiQuery() {
                 <InputLabel id="limit-label">Limit</InputLabel>
                 <Controller
                   render={({ field }) => (
-                    <Select>
+                    <Select {...field}>
                       <MenuItem value="10">10</MenuItem>
                       <MenuItem value="50">50</MenuItem>
                       <MenuItem value="100">100</MenuItem>
