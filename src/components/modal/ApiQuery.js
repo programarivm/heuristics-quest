@@ -82,13 +82,13 @@ export default function ApiQuery() {
               <FormControl className={classes.formControl}>
                 <InputLabel id="result-label">Result</InputLabel>
                 <Controller
-                  as={
-                    <Select>
+                  render={({ field }) => (
+                    <Select {...field}>
                       <MenuItem value="1-0">1-0</MenuItem>
                       <MenuItem value="0-1">0-1</MenuItem>
                       <MenuItem value="1/2-1/2">1/2-1/2</MenuItem>
                     </Select>
-                  }
+                  )}
                   name="result"
                   control={control}
                   defaultValue=""
@@ -98,13 +98,13 @@ export default function ApiQuery() {
               <FormControl className={classes.formControl}>
                 <InputLabel id="limit-label">Limit</InputLabel>
                 <Controller
-                  as={
+                  render={({ field }) => (
                     <Select>
                       <MenuItem value="10">10</MenuItem>
                       <MenuItem value="50">50</MenuItem>
                       <MenuItem value="100">100</MenuItem>
                     </Select>
-                  }
+                  )}
                   name="limit"
                   control={control}
                   defaultValue=""
