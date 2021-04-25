@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/heuristics-quest/static/js/main.ac50b772.chunk.js",
+    "main.js.map": "/heuristics-quest/static/js/main.ac50b772.chunk.js.map",
+    "runtime-main.js": "/heuristics-quest/static/js/runtime-main.7810f1ae.js",
+    "runtime-main.js.map": "/heuristics-quest/static/js/runtime-main.7810f1ae.js.map",
+    "static/js/2.80420b0d.chunk.js": "/heuristics-quest/static/js/2.80420b0d.chunk.js",
+    "static/js/2.80420b0d.chunk.js.map": "/heuristics-quest/static/js/2.80420b0d.chunk.js.map",
+    "index.html": "/heuristics-quest/index.html",
+    "static/js/2.80420b0d.chunk.js.LICENSE.txt": "/heuristics-quest/static/js/2.80420b0d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7810f1ae.js",
+    "static/js/2.80420b0d.chunk.js",
+    "static/js/main.ac50b772.chunk.js"
+  ]
+}
