@@ -47,7 +47,7 @@ export default function Query() {
   };
 
   const onSubmitForm = (data) => {
-    dispatch(queryAccept());
+    dispatch(queryAccept(data));
   };
 
   return (
@@ -87,16 +87,18 @@ export default function Query() {
                 />
               </FormControl>
               <FormControl className={classes.formControl}>
-                <InputLabel id="limit-label">Limit</InputLabel>
+                <InputLabel id="dataset-label">Dataset</InputLabel>
                 <Controller
                   render={({ field }) => (
                     <Select {...field}>
-                      <MenuItem value="10">10</MenuItem>
-                      <MenuItem value="50">50</MenuItem>
-                      <MenuItem value="100">100</MenuItem>
+                      <MenuItem value="01">1</MenuItem>
+                      <MenuItem value="02">2</MenuItem>
+                      <MenuItem value="03">3</MenuItem>
+                      <MenuItem value="04">4</MenuItem>
+                      <MenuItem value="05">5</MenuItem>
                     </Select>
                   )}
-                  name="limit"
+                  name="dataset"
                   control={control}
                   defaultValue=""
                   required

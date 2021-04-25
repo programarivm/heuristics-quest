@@ -1,11 +1,23 @@
-import games from 'data/01_draw.json';
 import queryActionTypes from 'constants/queryActionTypes';
 
-export const accept = () =>
+export const accept = (data) =>
 {
+  let result = null;
+  switch (data.result) {
+    case '1-0':
+      result = 'win';
+      break;
+    case '0-1':
+      result = 'lose';
+      break;
+    default:
+      result = 'draw';
+      break;
+  }
+
   return {
     type: queryActionTypes.CLICK_ACCEPT,
-    payload: games
+    payload: require(`data/${data.dataset}_${result}.json`)
   }
 }
 
