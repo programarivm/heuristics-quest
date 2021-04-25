@@ -2,8 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm, Controller } from "react-hook-form";
 import { makeStyles } from '@material-ui/core/styles';
-import { accept as apiQueryAccept } from 'actions/apiQueryActions';
-import { cancel as apiQueryCancel } from 'actions/apiQueryActions';
+import { accept as apiQueryAccept, cancel as apiQueryCancel } from 'actions/apiQueryActions';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -49,13 +48,7 @@ export default function ApiQuery() {
   };
 
   const onSubmitForm = (data) => {
-    dispatch(apiQueryAccept({
-      sql: `SELECT * FROM games
-            WHERE result='${data.result}'
-            ORDER BY RAND()
-            LIMIT ${data.limit}`
-      })
-    );
+    dispatch(apiQueryAccept());
   };
 
   return (

@@ -5,6 +5,7 @@ const api = (state = {}, action) => {
     case apiQueryActionTypes.CLICK_ACCEPT:
       return {
         ...state,
+        games: action.payload,
         modal: {
           open: false
         },
@@ -23,23 +24,6 @@ const api = (state = {}, action) => {
         ...state,
         modal: {
           open: true
-        },
-        loading: false
-      };
-    case apiQueryActionTypes.LOADING:
-      return {
-        ...state,
-        modal: {
-          open: true
-        },
-        loading: true
-      };
-    case apiQueryActionTypes.HTTP_STATUS_200:
-      return {
-        ...state,
-        games: action.payload,
-        modal: {
-          open: false
         },
         loading: false
       };
