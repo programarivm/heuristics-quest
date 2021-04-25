@@ -1,10 +1,10 @@
 import games from 'data/1_100.json';
-import apiQueryActionTypes from 'constants/apiQueryActionTypes';
+import queryActionTypes from 'constants/queryActionTypes';
 
 export const accept = () =>
 {
   return {
-    type: apiQueryActionTypes.CLICK_ACCEPT,
+    type: queryActionTypes.CLICK_ACCEPT,
     payload: games
   }
 }
@@ -12,13 +12,13 @@ export const accept = () =>
 export const cancel = () =>
 {
   return {
-    type: apiQueryActionTypes.CLICK_CANCEL
+    type: queryActionTypes.CLICK_CANCEL
   }
 }
 
 export const query = () =>
 {
   return {
-    type: apiQueryActionTypes.CLICK_QUERY
+    type: queryActionTypes.CLICK_QUERY
   }
 }

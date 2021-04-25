@@ -1,8 +1,8 @@
-import apiQueryReducer from './apiQueryReducer';
+import queryReducer from './queryReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  apiQueryReducer
+  queryReducer
 });
 
 export default rootReducer;

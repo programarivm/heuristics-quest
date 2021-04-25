@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useForm, Controller } from "react-hook-form";
 import { makeStyles } from '@material-ui/core/styles';
-import { accept as apiQueryAccept, cancel as apiQueryCancel } from 'actions/apiQueryActions';
+import { accept as queryAccept, cancel as queryCancel } from 'actions/queryActions';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
@@ -37,18 +37,18 @@ const useStyles = makeStyles((theme) => ({
  * Modal to query the API.
  * {@link https://github.com/react-hook-form/react-hook-form/issues/497}
  */
-export default function ApiQuery() {
+export default function Query() {
   const classes = useStyles();
-  const apiQueryReducer = useSelector(state => state.apiQueryReducer);
+  const queryReducer = useSelector(state => state.queryReducer);
   const dispatch = useDispatch();
   const { control, handleSubmit } = useForm();
 
   const handleClickCancel = () => {
-    dispatch(apiQueryCancel());
+    dispatch(queryCancel());
   };
 
   const onSubmitForm = (data) => {
-    dispatch(apiQueryAccept());
+    dispatch(queryAccept());
   };
 
   return (
@@ -57,7 +57,7 @@ export default function ApiQuery() {
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
         className={classes.modal}
-        open={apiQueryReducer.modal.open}
+        open={queryReducer.modal.open}
         onClose={handleClickCancel}
         closeAfterTransition
         BackdropComponent={Backdrop}
@@ -65,12 +65,12 @@ export default function ApiQuery() {
           timeout: 500,
         }}
       >
-        <Fade in={apiQueryReducer.modal.open}>
+        <Fade in={queryReducer.modal.open}>
           <div className={classes.paper}>
             <Typography variant="h5" align="center">
-              API Query
+              Query
             </Typography>
-            <Loading loading={apiQueryReducer.loading} />
+            <Loading loading={queryReducer.loading} />
             <form onSubmit={handleSubmit(onSubmitForm)}>
               <FormControl className={classes.formControl}>
                 <InputLabel id="result-label">Result</InputLabel>

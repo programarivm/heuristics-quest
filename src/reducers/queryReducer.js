@@ -1,8 +1,8 @@
-import apiQueryActionTypes from 'constants/apiQueryActionTypes';
+import queryActionTypes from 'constants/queryActionTypes';
 
-const api = (state = {}, action) => {
+const query = (state = {}, action) => {
   switch (action.type) {
-    case apiQueryActionTypes.CLICK_ACCEPT:
+    case queryActionTypes.CLICK_ACCEPT:
       return {
         ...state,
         games: action.payload,
@@ -11,7 +11,7 @@ const api = (state = {}, action) => {
         },
         loading: false
       };
-    case apiQueryActionTypes.CLICK_CANCEL:
+    case queryActionTypes.CLICK_CANCEL:
       return {
         ...state,
         modal: {
@@ -19,7 +19,7 @@ const api = (state = {}, action) => {
         },
         loading: false
       };
-    case apiQueryActionTypes.CLICK_QUERY:
+    case queryActionTypes.CLICK_QUERY:
       return {
         ...state,
         modal: {
@@ -39,4 +39,4 @@ const api = (state = {}, action) => {
   }
 };
 
-export default api;
+export default query;

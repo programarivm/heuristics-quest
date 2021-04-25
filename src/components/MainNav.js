@@ -1,29 +1,29 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { query as apiQuery } from 'actions/apiQueryActions';
+import { query } from 'actions/queryActions';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FlashOnIcon from '@material-ui/icons/FlashOn';
-import ApiQueryModal from 'components/modal/ApiQuery';
+import QueryModal from 'components/modal/Query';
 
 const MainNav = () => {
   const dispatch = useDispatch();
 
-  const handleClickApiQuery = (e) => {
+  const handleClickQuery = (e) => {
     e.preventDefault();
-    dispatch(apiQuery());
+    dispatch(query());
   };
 
   return (
     <div>
-      <ListItem button onClick={handleClickApiQuery}>
+      <ListItem button onClick={handleClickQuery}>
         <ListItemIcon>
           <FlashOnIcon />
         </ListItemIcon>
         <ListItemText secondary="Query" />
       </ListItem>
-      <ApiQueryModal />
+      <QueryModal />
     </div>
   );
 }

@@ -17,17 +17,17 @@ import Subtotal from 'components/plot/Subtotal';
 import { prepareHeuristicPicture, calcSubtotal } from 'components/plot/utils';
 
 export default function Games(params) {
-  const apiQueryReducer = useSelector(state => state.apiQueryReducer);
+  const queryReducer = useSelector(state => state.queryReducer);
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
   const items = [];
   const games = [];
   const rows = [];
-  if (apiQueryReducer.games[0]) {
-    const dimension = JSON.parse(apiQueryReducer.games[0].heuristic_picture).w[0].length;
+  if (queryReducer.games[0]) {
+    const dimension = JSON.parse(queryReducer.games[0].heuristic_picture).w[0].length;
     const total = new Array(dimension).fill(null).map(() => ({ w: 0, b: 0 }));
 
-    apiQueryReducer.games.forEach((game, i) => {
+    queryReducer.games.forEach((game, i) => {
       let subtotal = {};
       const heuristicPicture = JSON.parse(game.heuristic_picture);
       const data = prepareHeuristicPicture(heuristicPicture);
