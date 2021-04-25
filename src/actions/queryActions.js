@@ -1,4 +1,4 @@
-import games from 'data/1_100.json';
+import games from 'data/01_draw.json';
 import queryActionTypes from 'constants/queryActionTypes';
 
 export const accept = () =>
