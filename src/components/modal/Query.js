@@ -12,7 +12,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Typography from '@material-ui/core/Typography';
-import Loading from 'components/Loading';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -70,7 +69,6 @@ export default function Query() {
             <Typography variant="h5" align="center">
               Query
             </Typography>
-            <Loading loading={queryReducer.loading} />
             <form onSubmit={handleSubmit(onSubmitForm)}>
               <FormControl className={classes.formControl}>
                 <InputLabel id="result-label">Result</InputLabel>

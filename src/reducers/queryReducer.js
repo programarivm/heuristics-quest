@@ -8,24 +8,21 @@ const query = (state = {}, action) => {
         games: action.payload,
         modal: {
           open: false
-        },
-        loading: false
+        }
       };
     case queryActionTypes.CLICK_CANCEL:
       return {
         ...state,
         modal: {
           open: false
-        },
-        loading: false
+        }
       };
     case queryActionTypes.CLICK_QUERY:
       return {
         ...state,
         modal: {
           open: true
-        },
-        loading: false
+        }
       };
     default:
       return {
@@ -33,8 +30,7 @@ const query = (state = {}, action) => {
         games: [],
         modal: {
           open: false
-        },
-        loading: false
+        }
       };
   }
 };
