@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -48,9 +48,11 @@ export default function App() {
         <MainNav />
       </Drawer>
       <main className={classes.content}>
-        <Switch>
-          <Route exact path="/" component={HeuristicPicture} />
-        </Switch>
+        <Route exact path="/" render={() => (<Redirect to="/home" />)} />
+        <Route
+          path="/home"
+          render={(props) => <HeuristicPicture />}
+        />
       </main>
     </div>
   );
