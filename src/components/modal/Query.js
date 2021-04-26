@@ -93,7 +93,7 @@ export default function Query() {
                     <Select {...field}>
                       <MenuItem value="capablanca_jose_raul">Capablanca, Jose Raul</MenuItem>
                       <MenuItem value="carlsen_m">Carlsen, Magnus</MenuItem>
-                      <MenuItem value="chiburdanidze_m">Chiburdanidze, Maia</MenuItem>
+                      <MenuItem value="chiburdanidze_maia">Chiburdanidze, Maia</MenuItem>
                       <MenuItem value="fischer_robert_james">Fischer, Robert James</MenuItem>
                       <MenuItem value="gaprindashvili_nona">Gaprindashvili, Nona</MenuItem>
                       <MenuItem value="hou_yifan">Hou Yifan</MenuItem>
