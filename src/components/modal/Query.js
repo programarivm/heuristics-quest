@@ -91,11 +91,16 @@ export default function Query() {
                 <Controller
                   render={({ field }) => (
                     <Select {...field}>
-                      <MenuItem value="01">1</MenuItem>
-                      <MenuItem value="02">2</MenuItem>
-                      <MenuItem value="03">3</MenuItem>
-                      <MenuItem value="04">4</MenuItem>
-                      <MenuItem value="05">5</MenuItem>
+                      <MenuItem value="capablanca_jose_raul">Capablanca, Jose Raul</MenuItem>
+                      <MenuItem value="carlsen_m">Carlsen, Magnus</MenuItem>
+                      <MenuItem value="chiburdanidze_m">Chiburdanidze, Maia</MenuItem>
+                      <MenuItem value="fischer_robert_james">Fischer, Robert James</MenuItem>
+                      <MenuItem value="gaprindashvili_nona">Gaprindashvili, Nona</MenuItem>
+                      <MenuItem value="hou_yifan">Hou Yifan</MenuItem>
+                      <MenuItem value="karpov_anatoly">Karpov, Anatoly</MenuItem>
+                      <MenuItem value="kasparov_gary">Kasparov, Gary</MenuItem>
+                      <MenuItem value="polgar_judit">Polgar, Judit</MenuItem>
+                      <MenuItem value="xie_jun">Xie Jun</MenuItem>
                     </Select>
                   )}
                   name="dataset"
