@@ -67,7 +67,7 @@ export default function Games(params) {
     });
 
     games.push(
-      <Grid key={0} container spacing={2}>
+      <Grid key={0} container>
         <TableContainer component={Paper}>
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
