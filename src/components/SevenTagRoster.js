@@ -2,7 +2,9 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
 const isBlacklist = (key) => {
-  return key === 'heuristic_picture' ||
+  return key === 'id' ||
+    key === 'heuristic_picture' ||
+    key === 'heuristic_evaluation' ||
     key === 'Event' ||
     key === 'Site' ||
     key === 'Date' ||

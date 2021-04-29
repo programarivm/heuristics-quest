@@ -24,7 +24,8 @@ export default function Games(params) {
   const games = [];
   const rows = [];
   if (queryReducer.games[0]) {
-    const dimension = JSON.parse(queryReducer.games[0].heuristic_picture).w[0].length;
+    const evaluation = JSON.parse(queryReducer.games[0].heuristic_evaluation);
+    const dimension = evaluation.length;
     const total = new Array(dimension).fill(null).map(() => ({ w: 0, b: 0 }));
 
     queryReducer.games.forEach((game, i) => {
@@ -59,7 +60,7 @@ export default function Games(params) {
 
     total.forEach((t, i) => {
       rows.push({
-        name: i,
+        name: evaluation[i],
         w: t.w.toLocaleString(),
         b: t.b.toLocaleString(),
         result: (t.w / t.b).toLocaleString()
