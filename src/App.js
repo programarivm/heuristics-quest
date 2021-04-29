@@ -16,18 +16,18 @@ export default function App() {
           <Grid item xs={12} style={{ marginTop: 15 }}>
             <Paper className={classes.paper}>
               <Typography variant="h4" gutterBottom>
-                Heuristics Quest
+                <a href="https://github.com/programarivm/heuristics-quest" className={classes.a}>Heuristics Quest</a>
               </Typography>
               <Typography variant="h5" gutterBottom>
                 Chess Data Visualization for Further Supervised MLP Learning
               </Typography>
               <Typography variant="body1" style={{ marginBottom: 10 }}>
-                At this moment, a machine learning model is being built at <a href="https://github.com/programarivm/chess-data">programarivm/chess-data</a> with the help of <a href="https://github.com/programarivm/php-chess">PHP Chess</a> and <a href="https://github.com/RubixML/ML">Rubix ML</a>.
+                At this moment, a machine learning model is being built at <a href="https://github.com/programarivm/chess-data" className={classes.a}>programarivm/chess-data</a> with <a href="https://github.com/programarivm/php-chess" className={classes.a}>PHP Chess</a> and <a href="https://github.com/RubixML/ML" className={classes.a}>Rubix ML</a>.
                 The supervised learning process is all about using suitable heuristics.
                 A so-called heuristic picture consists of a group of snapshots such as attack, center or material, among others, intended to capture the state of a chess game at any given time, and can be plotted on a chart for visual study.
               </Typography>
               <Typography variant="body1" style={{ marginBottom: 10 }}>
-                So, how can the efficiency of a chess heuristic be measured? This is where plotting data on nice charts comes to the rescue!
+                How can the efficiency of a chess heuristic be measured? This is where plotting data on nice charts comes to the rescue!
               </Typography>
             </Paper>
             <Buttons />
