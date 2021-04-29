@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { query } from 'actions/queryActions';
 import { Button, ButtonGroup } from '@material-ui/core';
-import FlashOnIcon from '@material-ui/icons/FlashOn';
+import CameraAltIcon from '@material-ui/icons/CameraAlt';
 
 const Buttons = () => {
   const dispatch = useDispatch();
@@ -11,10 +11,10 @@ const Buttons = () => {
       <Button
         variant="contained"
         color="default"
-        startIcon={<FlashOnIcon />}
+        startIcon={<CameraAltIcon />}
         onClick={() => dispatch(query())}
       >
-        Query
+        Take pictures
       </Button>
     </ButtonGroup>
   );

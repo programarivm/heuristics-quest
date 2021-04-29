@@ -11,7 +11,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Typography from '@material-ui/core/Typography';
 
 /**
  * Modal to query the API.
@@ -47,9 +46,6 @@ export default function Query() {
       >
         <Fade in={queryReducer.modal.open}>
           <div className={classes.paper}>
-            <Typography variant="h5" align="center">
-              Query
-            </Typography>
             <form onSubmit={handleSubmit(onSubmitForm)}>
               <FormControl className={classes.formControl}>
                 <InputLabel id="result-label">Result</InputLabel>
@@ -68,7 +64,7 @@ export default function Query() {
                 />
               </FormControl>
               <FormControl className={classes.formControl}>
-                <InputLabel id="dataset-label">Dataset</InputLabel>
+                <InputLabel id="dataset-label">Player</InputLabel>
                 <Controller
                   render={({ field }) => (
                     <Select {...field}>
@@ -95,7 +91,7 @@ export default function Query() {
                 size="small"
                 fullWidth
               >
-                <Button color="primary" type="submit">Run</Button>
+                <Button color="primary" type="submit">Accept</Button>
                 <Button color="secondary" onClick={ (e) => handleClickCancel(e) }>Cancel</Button>
               </ButtonGroup>
             </form>
