@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { CssBaseline, Container, Grid } from '@material-ui/core';
 import Buttons from 'components/Buttons';
-import Games from 'components/plot/Games';
+import Games from 'components/Games';
 import QueryModal from 'components/QueryModal';
 
 export default function App() {

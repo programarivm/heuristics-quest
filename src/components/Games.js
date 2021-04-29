@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
-import useStyles from 'components/plot/styles';
+import useStyles from 'styles/styles';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -12,9 +12,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import SevenTagRoster from 'components/SevenTagRoster';
-import Chart from 'components/plot/Chart';
-import Subtotal from 'components/plot/Subtotal';
-import { prepareHeuristicPicture, calcSubtotal } from 'components/plot/utils';
+import Chart from 'components/Chart';
+import Subtotal from 'components/Subtotal';
+import { prepareHeuristicPicture, calcSubtotal } from 'utils/index';
 
 export default function Games(params) {
   const queryReducer = useSelector(state => state.queryReducer);
