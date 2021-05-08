@@ -10,7 +10,7 @@ const Buttons = () => {
     <ButtonGroup>
       <Button
         variant="contained"
-        color="default"
+        color="primary"
         startIcon={<CameraAltIcon />}
         onClick={() => dispatch(query())}
       >
