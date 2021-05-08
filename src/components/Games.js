@@ -73,7 +73,7 @@ export default function Games(params) {
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Heuristic</TableCell>
+                <TableCell>Evaluation</TableCell>
                 <TableCell align="right">White</TableCell>
                 <TableCell align="right">Black</TableCell>
                 <TableCell align="right">White / Black</TableCell>
