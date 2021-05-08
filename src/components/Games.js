@@ -60,38 +60,46 @@ export default function Games(params) {
     });
 
     games.push(
-      <Grid key={0} container>
-        <TableContainer component={Paper}>
-          <Table className={classes.table} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell>Evaluation</TableCell>
-                <TableCell align="right">White</TableCell>
-                <TableCell align="right">Black</TableCell>
-                <TableCell align="right">White / Black</TableCell>
-                <TableCell align="right">Weights</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow key={row.name}>
-                  <TableCell component="th" scope="row">{row.name}</TableCell>
-                  <TableCell align="right">{row.w}</TableCell>
-                  <TableCell align="right">{row.b}</TableCell>
-                  <TableCell align="right">{row.result}</TableCell>
-                  <TableCell align="right">
-                    <TextField
-                      id="standard-number"
-                      type="number"
-                      defaultValue="1"
-                      InputProps={{ inputProps: { min: 1, max: 100 } }}
-                    />
-                  </TableCell>
+      <Grid key={0} container spacing={3}>
+        <Grid item xs={12} sm={6}>
+          <TableContainer component={Paper}>
+            <Table className={classes.table} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Evaluation</TableCell>
+                  <TableCell align="right">White</TableCell>
+                  <TableCell align="right">Black</TableCell>
+                  <TableCell align="right">White / Black</TableCell>
+                  <TableCell align="right">Weights</TableCell>
                 </TableRow>
-                ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow key={row.name}>
+                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                    <TableCell align="right">{row.w}</TableCell>
+                    <TableCell align="right">{row.b}</TableCell>
+                    <TableCell align="right">{row.result}</TableCell>
+                    <TableCell align="right">
+                      <TextField
+                        id="standard-number"
+                        type="number"
+                        defaultValue="1"
+                        InputProps={{ inputProps: { min: 1, max: 100 } }}
+                      />
+                    </TableCell>
+                  </TableRow>
+                  ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Paper className={classes.paper}>
+            <p>TODO:</p>
+            <p>Display the heuristic picture considering the weights dynamically assigned in the table shown to the right.</p>
+          </Paper>
+        </Grid>
         { items }
       </Grid>
     );
