@@ -2,15 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import useStyles from 'styles/games';
-import Box from '@material-ui/core/Box';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
+import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@material-ui/core';
 import SevenTagRoster from 'components/SevenTagRoster';
 import Chart from 'components/Chart';
 import Subtotal from 'components/Subtotal';
@@ -77,6 +69,7 @@ export default function Games(params) {
                 <TableCell align="right">White</TableCell>
                 <TableCell align="right">Black</TableCell>
                 <TableCell align="right">White / Black</TableCell>
+                <TableCell align="right">Weights</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -86,6 +79,14 @@ export default function Games(params) {
                   <TableCell align="right">{row.w}</TableCell>
                   <TableCell align="right">{row.b}</TableCell>
                   <TableCell align="right">{row.result}</TableCell>
+                  <TableCell align="right">
+                    <TextField
+                      id="standard-number"
+                      type="number"
+                      defaultValue="1"
+                      InputProps={{ inputProps: { min: 1, max: 100 } }}
+                    />
+                  </TableCell>
                 </TableRow>
                 ))}
             </TableBody>
