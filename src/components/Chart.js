@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
+import { Legend, LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 export default function Chart(data) {
   return (
@@ -15,6 +15,7 @@ export default function Chart(data) {
         >
           <XAxis dataKey="n" />
           <YAxis />
+          <Legend />
           <Line type="monotone" dataKey="w" stroke="#82ca9d" fill="#82ca9d" dot={false} strokeWidth={2} />
           <Line type="monotone" dataKey="b" stroke="#8884d8" fill="#8884d8" dot={false} strokeWidth={2} />
         </LineChart>
