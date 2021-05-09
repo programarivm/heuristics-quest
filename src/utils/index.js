@@ -34,3 +34,52 @@ export const calcSubtotal = (heuristic) => {
 
   return total;
 };
+
+/**
+ * @link https://github.com/trekhleb/javascript-algorithms
+ *
+ * @param {Array} set
+ * @param {number} size
+ * @return {Array}
+ */
+export const permutateWithRepetitions = (set, size = set.length) => {
+  if (size === 1) {
+    return set.map((item) => [item]);
+  }
+  const permutations = [];
+  const smallerPermutations = permutateWithRepetitions(set, size - 1);
+  set.forEach((currentOption) => {
+    smallerPermutations.forEach((smallerPermutation) => {
+      permutations.push([currentOption].concat(smallerPermutation));
+    });
+  });
+
+  return permutations;
+}
+
+/**
+ * @param {Array} set
+ * @param {number} size
+ * @param {number} sum
+ * @return {Array}
+ */
+export const permutateWithRepetitionsRestricted = (set, size = set.length, sum) => {
+  if (size === 1) {
+    return set.map((item) => [item]);
+  }
+  const permutations = [];
+  const smallerPermutations = permutateWithRepetitions(set, size - 1);
+  set.forEach((currentOption) => {
+    smallerPermutations.forEach((smallerPermutation) => {
+      let item = [currentOption].concat(smallerPermutation);
+      let restriction = item.reduce(function(a, b){
+        return a + b;
+      }, 0);
+      if (sum === restriction) {
+        permutations.push(item);
+      }
+    });
+  });
+
+  return permutations;
+}
