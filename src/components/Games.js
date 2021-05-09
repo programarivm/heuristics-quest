@@ -60,7 +60,7 @@ export default function Games(params) {
     });
 
     let weights = optimalWeights(
-      permutateWithRepetitionsRestricted([5, 10, 15, 20], dimension, 100),
+      permutateWithRepetitionsRestricted([3, 5, 8, 13, 21], dimension, 100),
       rows.map((row) => {
         return row.result;
       })
