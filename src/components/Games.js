@@ -2,13 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import useStyles from 'styles/games';
-import { Box, Button, Grid, Paper, Table, TableBody, TableCell, TableContainer,
-  TableHead, TableRow, TextField } from '@material-ui/core';
+import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
 import SevenTagRoster from 'components/SevenTagRoster';
 import Chart from 'components/Chart';
 import Subtotal from 'components/Subtotal';
-import { prepareHeuristicPicture, calcSubtotal } from 'utils/index';
-import FitnessCenterIcon from '@material-ui/icons/FitnessCenter';
+import { prepareHeuristicPicture, calcSubtotal, permutateWithRepetitionsRestricted, optimalWeights } from 'utils/index';
 
 export default function Games(params) {
   const queryReducer = useSelector(state => state.queryReducer);
@@ -61,6 +59,17 @@ export default function Games(params) {
       });
     });
 
+    let weights = optimalWeights(
+      permutateWithRepetitionsRestricted([5, 10, 15, 20], dimension, 100),
+      rows.map((row) => {
+        return row.result;
+      })
+    );
+
+    rows.forEach((row, i) => {
+      row.weight = weights[i];
+    });
+
     games.push(
       <Grid key={0} container>
         <TableContainer component={Paper}>
@@ -71,15 +80,7 @@ export default function Games(params) {
                 <TableCell align="right">White</TableCell>
                 <TableCell align="right">Black</TableCell>
                 <TableCell align="right">White / Black</TableCell>
-                <TableCell align="right">
-                  <Button
-                    variant="contained"
-                    color="default"
-                    startIcon={<FitnessCenterIcon />}
-                  >
-                    Optimal weights
-                  </Button>
-                </TableCell>
+                <TableCell align="right">Optimal weights</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -89,13 +90,7 @@ export default function Games(params) {
                   <TableCell align="right">{row.w}</TableCell>
                   <TableCell align="right">{row.b}</TableCell>
                   <TableCell align="right">{row.result}</TableCell>
-                  <TableCell align="right">
-                    <TextField
-                      id="standard-number"
-                      type="number"
-                      InputProps={{ inputProps: {  readOnly: true, min: 1, max: 100 } }}
-                    />
-                  </TableCell>
+                  <TableCell align="right">{row.weight}</TableCell>
                 </TableRow>
                 ))}
             </TableBody>

@@ -57,7 +57,7 @@ export const permutateWithRepetitions = (set, size = set.length) => {
   });
 
   return permutations;
-}
+};
 
 /**
  * @param {Array} set
@@ -84,4 +84,22 @@ export const permutateWithRepetitionsRestricted = (set, size = set.length, sum) 
   });
 
   return permutations;
-}
+};
+
+export const optimalWeights = (permutations, results) => {
+  let optimal = {
+    current: 0,
+    permutation: []
+  };
+  results.forEach((result) => {
+    permutations.forEach((permutation) => {
+      let multiplication = permutation.reduce((r, a, i) => { return r + a * results[i] }, 0);
+      if (multiplication >= optimal.current) {
+        optimal.current = multiplication;
+        optimal.permutation = permutation;
+      }
+    });
+  });
+
+  return optimal.permutation;
+};
