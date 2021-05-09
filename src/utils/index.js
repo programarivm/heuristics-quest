@@ -31,6 +31,8 @@ export const calcSubtotal = (heuristic) => {
     total.w += item.w;
     total.b += item.b;
   });
+  total.w = Math.round(total.w * 100) / 100;
+  total.b = Math.round(total.b * 100) / 100;
 
   return total;
 };
