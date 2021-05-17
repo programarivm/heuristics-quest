@@ -8,8 +8,6 @@ const isBlacklist = (key) => {
     key === 'Event' ||
     key === 'Site' ||
     key === 'Date' ||
-    key === 'White' ||
-    key === 'Black' ||
     key === 'WhiteElo' ||
     key === 'BlackElo' ||
     key === 'ECO';

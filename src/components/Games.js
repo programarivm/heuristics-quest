@@ -2,7 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import useStyles from 'styles/games';
-import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
+import { Box, Grid, Paper, Table, TableBody, TableCell, TableContainer, TableHead,
+  TableRow, Typography } from '@material-ui/core';
 import SevenTagRoster from 'components/SevenTagRoster';
 import Chart from 'components/Chart';
 import Subtotal from 'components/Subtotal';
@@ -35,6 +36,9 @@ export default function Games(params) {
             <Subtotal {...subtotal} />
             <Chart axis={data[j]} />
           </Paper>
+          <Typography variant="subtitle2" align="center" style={{ margin: '4px' }} >
+            {evaluation[j]}
+          </Typography>
         </Grid>);
       });
 

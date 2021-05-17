@@ -4,10 +4,10 @@ export const accept = (data) =>
 {
   let result = null;
   switch (data.result) {
-    case '1-0':
+    case '0-1':
       result = 'win';
       break;
-    case '0-1':
+    case '1-0':
       result = 'lose';
       break;
     default:

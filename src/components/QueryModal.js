@@ -48,22 +48,6 @@ export default function Query() {
           <div className={classes.paper}>
             <form onSubmit={handleSubmit(onSubmitForm)}>
               <FormControl className={classes.formControl}>
-                <InputLabel id="result-label">Result</InputLabel>
-                <Controller
-                  render={({ field }) => (
-                    <Select {...field}>
-                      <MenuItem value="1-0">1-0</MenuItem>
-                      <MenuItem value="0-1">0-1</MenuItem>
-                      <MenuItem value="1/2-1/2">1/2-1/2</MenuItem>
-                    </Select>
-                  )}
-                  name="result"
-                  control={control}
-                  defaultValue=""
-                  required
-                />
-              </FormControl>
-              <FormControl className={classes.formControl}>
                 <InputLabel id="dataset-label">Player</InputLabel>
                 <Controller
                   render={({ field }) => (
@@ -81,6 +65,22 @@ export default function Query() {
                     </Select>
                   )}
                   name="dataset"
+                  control={control}
+                  defaultValue=""
+                  required
+                />
+              </FormControl>
+              <FormControl className={classes.formControl}>
+                <InputLabel id="result-label">Result</InputLabel>
+                <Controller
+                  render={({ field }) => (
+                    <Select {...field}>
+                      <MenuItem value="0-1">Wins</MenuItem>
+                      <MenuItem value="1-0">Loses</MenuItem>
+                      <MenuItem value="1/2-1/2">Draw</MenuItem>
+                    </Select>
+                  )}
+                  name="result"
                   control={control}
                   defaultValue=""
                   required
