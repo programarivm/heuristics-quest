@@ -10,10 +10,13 @@ export const prepareHeuristicPicture = (heuristicPicture) => {
   for (let i = 0; i < dimension; i++) {
     let data = [];
     heuristicPicture.w.forEach((item, j) => {
+      let w = item[i];
+      let b = heuristicPicture.b[j][i];
       data.push({
           n: j + 1,
-          w: item[i],
-          b: heuristicPicture.b[j][i],
+          w: w,
+          b: b,
+          balance: w - b
       });
     });
     result.push(data);
